@@ -7,4 +7,6 @@
 int main ()
 {
     printf("%d", ADD(12,14));
+
+    return 0;
 }
