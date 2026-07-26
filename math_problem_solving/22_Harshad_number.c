@@ -23,4 +23,5 @@ int main ()
         printf("%d is not a Harshad number.\n", original);
 
     return 0;
+    
 }

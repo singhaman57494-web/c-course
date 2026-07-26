@@ -10,6 +10,7 @@ int main ()
 
     int flag = 0;
     int digit = 1;
+    
     while(n > 0)
     {
         digit = n % 10;
@@ -29,5 +30,7 @@ int main ()
     {
         printf("not duck");
     }
+
     return 0;
+
 }
