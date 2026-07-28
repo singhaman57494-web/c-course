@@ -9,17 +9,15 @@ int main ()
     printf("enter the number :");
     scanf("%d", &n);
 
-    int original = n;
-
     while(n != 1)
     {
         int sum = 0;
-    for(int i = n; i > 0; i = i / 10)
-    {
-        int digits = i % 10;
+        for(int i = n; i > 0; i = i / 10)
+        {
+            int digits = i % 10;
 
-        sum = sum + digits * digits;
-    }
+            sum = sum + digits * digits;
+        }
     n = sum;
     }
     if(n == 1)
@@ -28,7 +26,10 @@ int main ()
     }
     else
     {
-        printf("not happy");
+        if(n )
+        {
+            
+        }
     }
 
     return 0;
