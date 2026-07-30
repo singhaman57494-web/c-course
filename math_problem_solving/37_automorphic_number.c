@@ -1,10 +1,11 @@
 //                             automorphic number revision in c
 
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
-    int n; 
+    int n;
     printf("enter the number : ");
     scanf("%d", &n);
 
