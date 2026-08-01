@@ -50,7 +50,7 @@ int main()
     }
     if (flag == 0)
     {
-        printf("not fascating");
+        printf("not fascinating");
     }
     else
     {
