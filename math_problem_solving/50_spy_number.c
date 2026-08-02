@@ -20,5 +20,7 @@ int main()
     }
     char *result = (sum == product)? "spy number":"not spy";
     printf("%s", result);
+
     return 0;
+    
 }
