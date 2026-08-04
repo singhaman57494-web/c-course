@@ -23,6 +23,5 @@ int main()
         printf("%d\n", arr2[i]);
     }
     
-    
     return 0;
 }

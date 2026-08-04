@@ -20,6 +20,5 @@ int main()
         printf("%d\n", nums[i]);
     }
     
-
     return 0;
 }
