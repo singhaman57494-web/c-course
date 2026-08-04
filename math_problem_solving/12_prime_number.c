@@ -9,12 +9,12 @@ int main ()
    printf("enter number : ");
    scanf("%d", &n);
 
-   int prime = 1; // 1 = prime, 0 = not prime
+   int prime = 1; 
 
    for(int i = 2; i < n; i++)
    {
         
-        if((n % i == 0))
+        if((n % i == 0)) // prime = 1, not prime = 0
         {
             prime = 0;    
         }
