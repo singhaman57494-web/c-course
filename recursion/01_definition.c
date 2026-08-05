@@ -1,0 +1,28 @@
+//                            recursion in c
+
+/*
+question :-                   what is Recursive function ?
+
+1. recursive functions or recursion is a process when a function calls a copy of
+itself to work on a smaller problem.
+
+2. any function which calls itself is called recursive function.
+
+3. this makes the life of programmer easy by dividing a givin problem into easier.
+
+4. a termination condition is imposed on such functions to stop them executing copies
+of themeselves forever.
+
+5. any problem that can be solved recursively. can also be solved iteratively.
+
+
+
+question :-                 why recursion ?
+
+1. any problem that can be solved recursively, can also be solved iteratively.
+
+2. however, some problems are best suited to be solved using recursion.
+
+3. for example, tower of hanoi, fibonacci series , factorial finding, etc.
+
+*/
