@@ -5,49 +5,53 @@
 
 #include <stdio.h>
 
+int starinput(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j <= i; j++)
+        {
+            printf("*");
+        }
+
+        printf("\n");
+    }
+}
+int rev_starinput(int n)
+{
+    for (int i = n; i >= 0; i--)
+    {
+        for (int k = i; k > 0; k--)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
 int main()
 {
-    int n;
-    while (n > 0)
+    int n, type;
+    printf("enter 0 for star pattern and 1 for reverse star pattern\n: ", &type);
+    scanf("%d", &type);
+
+    printf("how many rows do you want? : ");
+    scanf("%d", &n);
+
+    switch (type)
     {
-        printf("enter the number : ");
-        scanf("%d", &n);
+    case 0:
+        starinput(n);
+        break;
 
-        int choise;
-        printf("enter your choise (0 | 1 | 9 ): ");
-        scanf("%d", &choise);
+    case 1:
+        rev_starinput(n);
+        break;
 
-        if (choise == 1) // 1 -> triangular
-        {
-
-            for (int i = 1; i <= n; i++)
-            {
-                for (int j = 1; j <= i; j++)
-                {
-                    printf("*");
-                }
-                printf("\n");
-            }
-        }
-        else if (choise == 0) // reverse triangular
-        {
-            for (int i = n; i >= 0; i--)
-            {
-                for (int k = i; k > 0; k--)
-                {
-                    printf("*");
-                }
-                printf("\n");
-            }
-        }
-        else if (choise == 9) //  9 is end
-        {
-            break;
-        }
-        else
-        {
-            printf("your choise not match !try again \n");
-        }
+    default:
+        printf("you have enterd invalid choice ");
+        break;
     }
+
     return 0;
 }
