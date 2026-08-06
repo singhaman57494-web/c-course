@@ -25,4 +25,35 @@ question :-                 why recursion ?
 
 3. for example, tower of hanoi, fibonacci series , factorial finding, etc.
 
-*/
+// */ 
+//               this code is prectice code star patterns 
+
+
+//         if (choise == 1) // 1 -> triangular
+//         {
+
+//             for (int i = 1; i <= n; i++)
+//             {
+//                 for (int j = 1; j <= i; j++)
+//                 {
+//                     printf("*");
+//                 }
+//                 printf("\n");
+//             }
+//         }
+//         else if (choise == 0) // reverse triangular
+//         {
+//             for (int i = n; i >= 0; i--)
+//             {
+//                 for (int k = i; k > 0; k--)
+//                 {
+//                     printf("*");
+//                 }
+//                 printf("\n");
+//             }
+//         }
+//         else
+//         {
+//             printf("your choise not match !try again \n");
+//         }
+    
