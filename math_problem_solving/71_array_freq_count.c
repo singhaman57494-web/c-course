@@ -12,19 +12,16 @@ int main()
         scanf("%d", &num[i]);
     }
 
+    int visited[10] = {0};
     for (int i = 0; i < 10; i++)
     {
-        int visited[10] = {0};
-        
-        
-            if (visited[i] == 1)
-            {
-                continue;
-            }
-        
+        if (visited[i] == 1)
+        {
+            continue;
+        }
 
-        int count = 0;
-        for (int k = 0; k < 10; k++)
+        int count = 1;
+        for (int k = i + 1; k < 10; k++)
         {
             if (num[k] == num[i])
             {
@@ -32,7 +29,10 @@ int main()
                 visited[k] = 1;
             }
         }
-        printf("%d match is %d times\n", num[i], count);
+        if (count > 1)
+        {
+            printf("%d appears %d times\n", num[i], count);
+        }
     }
 
     return 0;
