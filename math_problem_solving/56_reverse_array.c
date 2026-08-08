@@ -1,4 +1,4 @@
-//                            reverse an array
+//                            reverse an array using loop
 
 #include <stdio.h>
 
