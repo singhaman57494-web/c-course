@@ -29,7 +29,7 @@ int main()
                 visited[k] = 1;
             }
         }
-        if (count > 1)
+        if (count >= 1)
         {
             printf("%d appears %d times\n", num[i], count);
         }
