@@ -20,7 +20,7 @@ int main()
         for (int j = 0; j < 3; j++)
         {
 
-            // minimum of row 
+            // Minimum of row 
             int min = matrix[i][0];
             for (int k = 1; k < 3; k++)
             {
@@ -30,7 +30,7 @@ int main()
                  }
             }
             
-            // maximum of column
+            // Maximum of column
             int max = matrix[0][j];
             for (int k = 1; k < 3; k++)
             {
@@ -39,7 +39,7 @@ int main()
                     max = matrix[k][j];
                 }
             }
-            // condidate check
+            // Condidate check
             if (matrix[i][j] == min && matrix[i][j] == max)
             {
                 printf("saddle point : %d\n", matrix[i][j]);
