@@ -2,22 +2,34 @@
 
 #include <stdio.h>
 
-void arrayrev(int agg1[])
+void arrayrev(int n, int agg1[])
 {
-    for(int i = 0; i < 7 / 2 ; i++)
+    for (int i = 0; i < n / 2; i++)
     {
         int temp;
         temp = agg1[i];
-        agg1[i] = agg1[6 - i];
-        agg1[6 - i] = temp;
+        agg1[i] = agg1[n - 1 - i];
+        agg1[n - 1 - i] = temp;
     }
 }
 int main()
 {
-    int arr[] = {1, 2, 3, 4, 5, 6, 67};
-    arrayrev(arr);
-    for(int i = 0; i < 7; i++)
+     int n;
+    printf("enter n number : ");
+    scanf("%d", &n);
+
+    int arr[8];
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("enter the num : ");
+        scanf("%d", &arr[i]);
+    }
+    arrayrev(n, arr);
+    for (int i = 0; i < n; i++)
+    {
         printf("%d ", arr[i]);
+    }
 
     return 0;
 }
