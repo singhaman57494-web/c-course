@@ -9,16 +9,19 @@ float calculate(float a, float b, char *operator)
     {
     case '+':
         return a + b;
-        break;
+
     case '-':
         return a - b;
-        break;
+
     case '*':
         return a * b;
-        break;
+
     case '/':
         return a / b;
-        break;
+    
+    case '%':
+        return (int)a % (int)b;
+
     default:
         printf("enter wrong operator : ");
     }
