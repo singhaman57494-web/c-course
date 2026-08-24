@@ -24,40 +24,40 @@ void Quiz()
         "Question 18 :- What does \\0 represent in a C string?",
         "Question 19 :- Which keyword is used to define a structure?",
         "Question 20 :- Which of these is not a valid C data type?",
-        
+
     };
 
-    char correct[20] = {'A', 'B', 'B', 'B','B', 'C', 'C', 'B', 'A', 'C', 'C', 'B', 'C', 'A', 'B', 'B', 'C', 'C', 'A', 'D'};
+    char correct[20] = {'A', 'B', 'B', 'B', 'B', 'C', 'C', 'B', 'A', 'C', 'C', 'B', 'C', 'A', 'B', 'B', 'C', 'C', 'A', 'D'};
     char *options[20][4] = {
-        {"(A) scanf()","(B) printf()","(C) input()","(D) read()"},
+        {"(A) scanf()", "(B) printf()", "(C) input()", "(D) read()"},
         {"(A) python", "(B) c", "(C) java", "(D)javascript"},
-        {"(A) :","(B) ;","(C) .","(D) ,"},
+        {"(A) :", "(B) ;", "(C) .", "(D) ,"},
         {"(A) print()", "(B) printf()", "(C) display()", "(D) count()"},
-        {"(A) string","(B) char","(C) character","(D) taxt"},
-        {"(A) /","(B) //","(C) %%","(D) rem"},
-        {"(A) for","(B) while\n","(C) do_while","(D) None"},
-        {"(A) break\n","(B) return","(C) exit","(D) send"},
-        {"(A) 0","(B) 1","(C) -1","(D) 2"},
-        {"(A) fixed","(B) constant","(C) const","(D) immutable"},
-        {"(A) restarts the loop ","(B) skips one iteration","(C) exits the loop","(D) stop the program permanently"},
-        {"(A) integer x\n","(B) x int","(C) int x","(D) num x"},
-        {"(A) =","(B) ==","(C) ===","(D) !="},
-        {"(A) if","(B) chek","(C) condition","(D) when"},
-        {"(A) *","(B) &","(C) #","(D) @"},
-        {"(A) &","(B) *","(C) %%","(D) ->"},
-        {"(A) <string.h","(B) <math.h>","(C) <stdio.h","(D) <stdlib.h>"},
-        {"(A) space","(B) new line","(C) null character","(D) zero as a number"},
-        {"(A) struct","(B) structure","(C) record","(D) object"},
-        {"(A) int","(B) float","(C) char","(D) string"},
+        {"(A) string", "(B) char", "(C) character", "(D) taxt"},
+        {"(A) /", "(B) //", "(C) %%", "(D) rem"},
+        {"(A) for", "(B) while", "(C) do_while", "(D) None"},
+        {"(A) break", "(B) return", "(C) exit", "(D) send"},
+        {"(A) 0", "(B) 1", "(C) -1", "(D) 2"},
+        {"(A) integer x", "(B) x int", "(C) int x", "(D) num x"},
+        {"(A) fixed", "(B) constant", "(C) const", "(D) immutable"},
+        {"(A) =", "(B) ==", "(C) ===", "(D) !="},
+        {"(A) restarts the loop ", "(B) skips one iteration", "(C) exits the loop", "(D) stop the program permanently"},
+        {"(A) if", "(B) chek", "(C) condition", "(D) when"},
+        {"(A) *", "(B) &", "(C) #", "(D) @"},
+        {"(A) &", "(B) *", "(C) %%", "(D) ->"},
+        {"(A) <string.h", "(B) <math.h>", "(C) <stdio.h", "(D) <stdlib.h>"},
+        {"(A) space", "(B) new line", "(C) null character", "(D) zero as a number"},
+        {"(A) struct", "(B) structure", "(C) record", "(D) object"},
+        {"(A) int", "(B) float", "(C) char", "(D) string"},
 
     };
     int score = 0;
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 20; i++)
     {
         printf("\n%s\n", questions[i]);
-        for(int j = 0; j < 4; j++)
+        for (int j = 0; j < 4; j++)
         {
-            printf("(%c) %s\n", 'A' + j , options[i][j]);
+            printf("(%c) %s\n", 'A' + j, options[i][j]);
         }
 
         printf("enter the choice(A-D) ");
@@ -72,232 +72,8 @@ void Quiz()
         {
             printf("wrong Answer\n ");
         }
-
     }
-    printf("score = %d/3\n");
-    // printf("\n\n");
-    // ;
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'B')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-    
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'C')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-    
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'C')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-    
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'B')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-    
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'A')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-    // printf("\n\n");
-    
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'C')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-    
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'C')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-    // 
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'B')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-    // printf("\n \n");
-    
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'C')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-    
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'A')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-    ;
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'B')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-    
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'B')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-    // printf("\n \n");
-    
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'C')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-    // printf("\n \n");
-    
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'C')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-    // printf("\n \n");
-    
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'A')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-    // printf("\n \n");
-   
-
-    // printf("enter the guess(A-D) ");
-    // scanf(" %c", &choice);
-
-    // if (choice == 'D')
-    // {
-    //     printf("write Answer");
-    // }
-    // else
-    // {
-    //     printf("wrong Answer ");
-    // }
-
-    // for (int i = 0; i < 4; i++)
-    // {
-    //     if (choice == "write answer")
-    //     {
-    //         score++;
-    //     }
-    // }
+    printf("score = %d/20\n", score);
 }
 
 int main()
