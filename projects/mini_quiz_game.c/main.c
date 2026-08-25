@@ -1,29 +1,45 @@
 #include <stdio.h>
+#include <stdlib.h> // use of rand()
+#include <time.h>   // use of srand()
 
 void Quiz()
 {
     char choice;
+    int index[20];
+
+    for (int i = 0; i < 20; i++)
+    {
+        index[i] = i;
+    }
+    for (int i = 19; i > 0; i--)
+    {
+        int j = rand() % (i + 1);
+
+        int temp = index[i];
+        index[i] = index[j];
+        index[j] = temp;
+    }
     char *questions[20] = {
-        "Question 1 :- which function is used to make formatted input in c?",
-        "Question 2 :- which language are we currently using",
-        "Question 3 :- which symbol is used to end a C statement?",
-        "Question 4 :- which function is used to display output in C?",
-        "Question 5 :- which datatype is used to store a single character? ",
-        "Question 6 :- which operator is used to get the remainder of a division?",
-        "Question 7 :- which loops is guaranteed to execute at least once",
-        "Question 8 :- Which keyword is used to return a value from a function ?",
-        "Question 9 :- Array indexing in C starts from ?",
-        "Question 10 :-  Which is the correct way to declare an integer variable?",
-        "Question 11 :- Which keyword is used to make a variable constant?",
-        "Question 12 :- Which operator is used to compare two values for equality?",
-        "Question 13 :- What does break do inside a loop?",
-        "Question 14 :- Which keyword is used for decision making?",
-        "Question 15 :- Which symbol is used to access the address of a variable?",
-        "Question 16 :- Which symbol is used to dereference a pointer?",
-        "Question 17 :- Which header file is commonly used for printf() and scanf()?",
-        "Question 18 :- What does \\0 represent in a C string?",
-        "Question 19 :- Which keyword is used to define a structure?",
-        "Question 20 :- Which of these is not a valid C data type?",
+        "Question :- which function is used to make formatted input in c?",
+        "Question :- which language are we currently using",
+        "Question :- which symbol is used to end a C statement?",
+        "Question :- which function is used to display output in C?",
+        "Question :- which datatype is used to store a single character? ",
+        "Question :- which operator is used to get the remainder of a division?",
+        "Question :- which loops is guaranteed to execute at least once",
+        "Question :- Which keyword is used to return a value from a function ?",
+        "Question :- Array indexing in C starts from ?",
+        "Question :-  Which is the correct way to declare an integer variable?",
+        "Question :- Which keyword is used to make a variable constant?",
+        "Question :- Which operator is used to compare two values for equality?",
+        "Question :- What does break do inside a loop?",
+        "Question :- Which keyword is used for decision making?",
+        "Question :- Which symbol is used to access the address of a variable?",
+        "Question :- Which symbol is used to dereference a pointer?",
+        "Question :- Which header file is commonly used for printf() and scanf()?",
+        "Question :- What does \\0 represent in a C string?",
+        "Question :- Which keyword is used to define a structure?",
+        "Question :- Which of these is not a valid C data type?",
 
     };
 
@@ -54,16 +70,20 @@ void Quiz()
     int score = 0;
     for (int i = 0; i < 20; i++)
     {
-        printf("\n%s\n", questions[i]);
+        printf("\n%s\n", questions[index[i]]);
         for (int j = 0; j < 4; j++)
         {
-            printf("(%c) %s\n", 'A' + j, options[i][j]);
+            printf(" %s\n", options[index[i]][j]);
         }
-
         printf("enter the choice(A-D) ");
         scanf(" %c", &choice);
 
-        if (choice == correct[i])
+        while (choice != 'A' && choice != 'B' && choice != 'C' && choice != 'D')
+        {
+            printf("Invalid choice! try again");
+            scanf(" %c", &choice);
+        }
+        if (choice == correct[index[i]])
         {
             printf("write Answer\n");
             score++;
@@ -73,12 +93,68 @@ void Quiz()
             printf("wrong Answer\n ");
         }
     }
-    printf("score = %d/20\n", score);
+    printf("\n=========================QUIZ RESULT===============================\n");
+    printf("correct Answers  : %d\n", score);
+    printf("wrong Answer     : %d\n", 20 - score);
+    printf("score            : %d/20\n", score);
+    printf("percentage       : %.2f %%\n", (score * 100.0) / 20);
+    printf("=====================================================================\n");
+
+    float percentage = (score * 100.0) / 20;
+
+    if (percentage >= 80)
+    {
+        printf("Excellent! \n");
+    }
+    else if (percentage >= 60)
+    {
+        printf("Good job! \n");
+    }
+    else if (percentage >= 20)
+    {
+        printf("keep practicing! \n");
+    }
+    else
+    {
+        printf("need more practice!  \n");
+    }
 }
 
 int main()
 {
-    Quiz();
+    char again;
+    int choice; 
+    srand(time(NULL));
+    
+    printf("           C QUIZ GAME\n");
+    printf("\n================================\n");
+    printf("1. start Game\n");
+    printf("2. Exit Game\n");
+
+    printf("enter the coice(1 | 2) : ");
+    scanf(" %d", &choice);
+    printf("===================================\n");
+
+    if(choice == 1)
+    {
+        do
+    {
+        Quiz();
+        printf("Play again? enter (y , Y) : ");
+        scanf(" %c", &again);
+
+    } while (again == 'y' || again == 'Y');
+    }
+    else if(choice == 2)
+    {
+        printf("game ended...\n");
+    }
+    else
+    {
+        printf("INVALID CHOICE! try again : \n");
+    }
+
+    printf("\n Game ended.. \n");
 
     return 0;
 }
