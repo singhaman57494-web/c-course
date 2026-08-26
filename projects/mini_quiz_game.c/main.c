@@ -2,7 +2,7 @@
 #include <stdlib.h> // use of rand()
 #include <time.h>   // use of srand()
 
-void Quiz()
+int Basic_level()
 {
     char choice;
     int index[20];
@@ -80,7 +80,7 @@ void Quiz()
 
         while (choice != 'A' && choice != 'B' && choice != 'C' && choice != 'D')
         {
-            printf("Invalid choice! try again");
+            printf("Invalid choice! try again : ");
             scanf(" %c", &choice);
         }
         if (choice == correct[index[i]])
@@ -93,12 +93,12 @@ void Quiz()
             printf("wrong Answer\n ");
         }
     }
-    printf("\n=========================QUIZ RESULT===============================\n");
+    printf("\n=========================BASIC LEVEL RESULT===============================\n");
     printf("correct Answers  : %d\n", score);
     printf("wrong Answer     : %d\n", 20 - score);
     printf("score            : %d/20\n", score);
     printf("percentage       : %.2f %%\n", (score * 100.0) / 20);
-    printf("=====================================================================\n");
+    printf("============================================================================\n");
 
     float percentage = (score * 100.0) / 20;
 
@@ -118,14 +118,139 @@ void Quiz()
     {
         printf("need more practice!  \n");
     }
+    return score;
+}
+
+void advance_level()
+{
+    int score = 0;
+    char choice;
+    int index[20];
+
+    for (int i = 0; i < 20; i++)
+    {
+        index[i] = i;
+    }
+    for (int i = 19; i > 0; i--)
+    {
+        int j = rand() % (i + 1);
+
+        int temp = index[i];
+        index[i] = index[j];
+        index[j] = temp;
+    }
+    char *question[20] = {
+        "Question :- what is the output of printf(\"%%d\", sizeof(char));?",
+        "Question :- which function is used to dynamically allocate memory in c ?",
+        "Question :- which function releases dynamically allocated memory?",
+        "Question :- what does a pointer store?",
+        "Question :- what does *ptr repersent when ptr is a pointer? ",
+        "Question :- what is the main purpose of static for a local variable?",
+        "Question :- which operator accesses a structure a member through a structure pointer?",
+        "Question :- which header file contains malloc() and free()?",
+        "Question :- what does const generally indicate?",
+        "Question :- what is recursion?",
+        "Question :- which operator performs a bitwise AND?",
+        "Question :- which operator performs a bitwise OR?",
+        "Question :- what does relloc() do?",
+        "Question :- which declaration repersents a pointer to an integer?",
+        "Question :- what is a dangling pointer?",
+        "Question :- which preprocessor directive is commanly used to define a micro ?",
+        "Question :- what is a function pointer?",
+        "Question :- Which function is commonly used to compare two strings in c ?",
+        "Question :- if X = 10 and a pointer p points to x, what happens when *p = 20?",
+        "Question :- if an integer array contains 10, 20, 30 and p points to its first element, what does *(p + 2) give?",
+
+    };
+
+    char Right[20] = {'B', 'B', 'C', 'B', 'B', 'B', 'B', 'C', 'A', 'B', 'A', 'B', 'B', 'C', 'B', 'B', 'A', 'B', 'A', 'C'};
+    char *option[20][4] = {
+        {"(A) 0", "(B) 1", "(C) 2", "(D) depends on compiler"},
+        {"(A) alloc()", "(B) malloc()", "(C) memory()", "(D) new()"},
+        {"(A) delete()", "(B) remove()", "(C) free()", "(D) relese"},
+        {"(A) A data type", "(B) An address", "(C) A keyword", "(D) A function name only"}, //
+        {"(A) address of ptr", "(B) value store at the pointed address", "(C) size of ptr", "(D) pointer type"},
+        {"(A) makes it constant", "(B) preserves its value between function calls", "(C) make it global", "(D) delete it after use"},
+        {"(A) .", "(B) ->", "(C) ::", "(D) *"},
+        {"(A) stdio.h", "(B) string.h", "(C) stdlib.h", "(D) math.h"},
+        {"(A) the value should not be modified through that declaration", "(B) the variable becomes global", "(C) the variable is autometically initialized to zero", "(D) the variable is store permanently"},
+        {"(A) a loop inside a loop ", "(B) a function calling itself", "(C) pointer pointing itself", "(D) multiple functions with the same name"},
+        {"(A) &&", "(B) &", "(C) int ||", "(D) |"},
+        {"(A) |", "(B) |||", "(C) &&", "(D) ||"}, //
+        {"(A) only frees memory", "(B) changes the size of previously allocated memory", "(C) creates a file", "(D) initializes a pointer"},
+        {"(A) int p*; ", "(B) pointer int p;", "(C) int *p;", "(D) *int ptr;"},
+        {"(A) A pointer initialized to Null", "(B) A pointer that refers to memory that is no longer valid", "(C) A pointer to a pointer", "(D) A pointer storing zero"},
+        {"(A) #macro", "(B) #define", "(C) #include", "(D) #const"},
+        {"(A) A pointer that stores the address of a function", "(B) A function that returns a pointer only", "(C) A pointer inside an array", "(D) A function with no parameters"},
+        {"(A) strcompare()", "(B) strcpm()", "(C) compare", "(D) stringcmp()"},
+        {"(A) x becomes 20", "(B) x remains 10", "(C) p becomes 20", "(D) an error occurs"},
+        {"(A) 10", "(B) 20", "(C) 30", "(D) address of the array"},
+
+    };
+
+    for (int i = 0; i < 20; i++)
+    {
+        printf("\n%s\n", question[index[i]]);
+        for (int j = 0; j < 4; j++)
+        {
+            printf(" %s\n", option[index[i]][j]);
+        }
+        printf("enter the choice(A-D) ");
+        scanf(" %c", &choice);
+
+        while (choice != 'A' && choice != 'B' && choice != 'C' && choice != 'D')
+        {
+            printf("Invalid choice! try again : ");
+            scanf(" %c", &choice);
+        }
+        if (choice == Right[index[i]])
+        {
+            printf("write Answer\n");
+            score++;
+        }
+        else
+        {
+            printf("wrong Answer\n ");
+        }
+    }
+    printf("\n=========================ADVANCE LEVEL RESULT===============================\n");
+    printf("Correct Answers                : %d\n", score);
+    printf("Wrong Answer                   : %d\n", 20 - score);
+    printf("Advance level score            : %d/20\n", score);
+    printf("Percentage                     : %.2f %%\n", (score * 100.0) / 20);
+    printf("============================================================================\n");
+
+    float Advance_percentage = (score * 100.0) / 20;
+
+    if (Advance_percentage >= 85)
+    {
+        printf("Excellent! \n");
+    }
+    else if (Advance_percentage >= 70)
+    {
+        printf("nice work! \n");
+    }
+    else if (Advance_percentage >= 40)
+    {
+        printf("keep practicing! \n");
+    }
+    else
+    {
+        printf("need more practice!  \n");
+    }
+    //
 }
 
 int main()
 {
     char again;
-    int choice; 
+    int choice;
+    int highscore = 0;
+    char retry;
+    char advance_choice;
+
     srand(time(NULL));
-    
+
     printf("           C QUIZ GAME\n");
     printf("\n================================\n");
     printf("1. start Game\n");
@@ -135,17 +260,48 @@ int main()
     scanf(" %d", &choice);
     printf("===================================\n");
 
-    if(choice == 1)
+    if (choice == 1)
     {
         do
-    {
-        Quiz();
-        printf("Play again? enter (y , Y) : ");
-        scanf(" %c", &again);
+        {
+            int score = Basic_level();
+            if (score > highscore)
+            {
+                highscore = score;
+            }
+            printf("High score : %d/20\n", highscore);
+            if (score >= 12)
+            {
+                printf("\n_____advance_level_unlocked!_____\n");
 
-    } while (again == 'y' || again == 'Y');
+                printf("try advance level again? (Y | N) : ");
+                scanf(" %c", &advance_choice);
+
+                if (advance_choice == 'Y' || advance_choice == 'y')
+                {
+                    advance_level();
+                }
+            }
+            {
+                printf("\nYou need at least 60%% to unlock advanced level.\n");
+
+                printf("try Basic level again? (Y | N) : ");
+                scanf(" %c", &retry);
+            }
+            if (retry == 'Y' || retry == 'y')
+            {
+                continue;
+            }
+            else
+            {
+                break;
+            }
+            printf("Play again? enter (y , Y) : ");
+            scanf(" %c", &again);
+
+        } while (again == 'y' || again == 'Y');
     }
-    else if(choice == 2)
+    else if (choice == 2)
     {
         printf("game ended...\n");
     }
