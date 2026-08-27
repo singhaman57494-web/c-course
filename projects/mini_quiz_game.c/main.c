@@ -238,7 +238,6 @@ void advance_level()
     {
         printf("need more practice!  \n");
     }
-    //
 }
 
 int main()
@@ -270,10 +269,27 @@ int main()
                 highscore = score;
             }
             printf("High score : %d/20\n", highscore);
+
+            if (score < 12)
+            {
+                printf("\nYou need at least 60%% to unlock advanced level.\n");
+                printf("try Basic level again? (Y | N) : ");
+                scanf(" %c", &retry);
+
+                if (retry == 'Y' || retry == 'y')
+                {
+                    again = 'Y';
+                    continue;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
             if (score >= 12)
             {
                 printf("\n_____advance_level_unlocked!_____\n");
-
                 printf("try advance level again? (Y | N) : ");
                 scanf(" %c", &advance_choice);
 
@@ -282,20 +298,7 @@ int main()
                     advance_level();
                 }
             }
-            {
-                printf("\nYou need at least 60%% to unlock advanced level.\n");
 
-                printf("try Basic level again? (Y | N) : ");
-                scanf(" %c", &retry);
-            }
-            if (retry == 'Y' || retry == 'y')
-            {
-                continue;
-            }
-            else
-            {
-                break;
-            }
             printf("Play again? enter (y , Y) : ");
             scanf(" %c", &again);
 
