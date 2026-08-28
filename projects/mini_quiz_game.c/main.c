@@ -316,4 +316,5 @@ int main()
     printf("\n Game ended.. \n");
 
     return 0;
+    
 }
