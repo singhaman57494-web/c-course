@@ -70,6 +70,7 @@ int Basic_level()
     int score = 0;
     for (int i = 0; i < 20; i++)
     {
+        printf("\nQuestion %d/20\n", i + 1);
         printf("\n%s\n", questions[index[i]]);
         for (int j = 0; j < 4; j++)
         {
@@ -121,7 +122,7 @@ int Basic_level()
     return score;
 }
 
-void advance_level()
+int advance_level()
 {
     int score = 0;
     char choice;
@@ -190,6 +191,7 @@ void advance_level()
 
     for (int i = 0; i < 20; i++)
     {
+        printf("\nQuestion %d/20\n", i + 1);
         printf("\n%s\n", question[index[i]]);
         for (int j = 0; j < 4; j++)
         {
@@ -238,6 +240,8 @@ void advance_level()
     {
         printf("need more practice!  \n");
     }
+
+    return score;
 }
 
 int main()
@@ -247,6 +251,8 @@ int main()
     int highscore = 0;
     char retry;
     char advance_choice;
+    int basicscore = 0;
+    int Advancescore = 0;
 
     srand(time(NULL));
 
@@ -263,14 +269,14 @@ int main()
     {
         do
         {
-            int score = Basic_level();
-            if (score > highscore)
+            basicscore = Basic_level();
+            if (basicscore > highscore)
             {
-                highscore = score;
+                highscore = basicscore;
             }
             printf("High score : %d/20\n", highscore);
 
-            if (score < 12)
+            if (basicscore < 12)
             {
                 printf("\nYou need at least 60%% to unlock advanced level.\n");
                 printf("try Basic level again? (Y | N) : ");
@@ -287,7 +293,7 @@ int main()
                 }
             }
 
-            if (score >= 12)
+            if (basicscore >= 12)
             {
                 printf("\n_____advance_level_unlocked!_____\n");
                 printf("try advance level again? (Y | N) : ");
@@ -295,8 +301,23 @@ int main()
 
                 if (advance_choice == 'Y' || advance_choice == 'y')
                 {
-                    advance_level();
+                    Advancescore = advance_level();
+
+                    int totalScore = basicscore + Advancescore;
+                    float percentage = (totalScore / 40.0) * 100;
+                    printf("\n==================FINAL RESULT=======================\n");
+                    printf("Basic level        : %d/20\n", basicscore);
+                    printf("Advance level      : %d/20\n", Advancescore);
+                    printf("total score        : %d/40\n", totalScore);
+                    printf("percentage         : %.2f%%\n", percentage);
+                    printf("\n=====================================================\n");
+                    if (Advancescore > highscore)
+                    {
+                        highscore = Advancescore;
+                    }
                 }
+
+                printf("Highscore : %d/20\n", highscore);
             }
 
             printf("Play again? enter (y , Y) : ");
@@ -316,5 +337,4 @@ int main()
     printf("\n Game ended.. \n");
 
     return 0;
-    
 }
